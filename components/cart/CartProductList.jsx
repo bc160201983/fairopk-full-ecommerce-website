@@ -3,6 +3,7 @@ import { useGlobalContext } from "../../context/context";
 import { default_image } from "../Home/ProductList";
 import AddBtn from "./AddBtn";
 import AddtoCartBtns from "../AddToCartBtn/AddtoCartBtns";
+import Image from "next/image";
 
 const CartProductList = ({
   id,
@@ -18,7 +19,13 @@ const CartProductList = ({
     <div className="">
       <div className="product px-2 h-[270px] w-[244px] bg-white mr-0">
         <div className="image flex justify-center items-center mx-auto h-[140px] w-[140px]">
-          <img src={image === undefined ? default_image : image?.src} alt="" />
+          <Image
+            src={image === undefined ? default_image : image?.src}
+            alt=""
+            width={140}
+            height={140}
+            layout="intrinsic"
+          />
         </div>
         <div className="item-details">
           <div className="price font-bold text-[16px] w-full">

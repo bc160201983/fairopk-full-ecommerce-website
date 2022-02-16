@@ -1,10 +1,14 @@
+import Image from "next/image";
 import React from "react";
 
 const EmptyCart = () => {
   return (
     <div className="bg-white h-[318px] flex flex-col justify-center items-center p-4">
       <div className="w-[144px] h-[144px]">
-        <img
+        <Image
+          width={144}
+          height={144}
+          layout="intrinsic"
           src="https://cdn.grofers.com/assets/ui/empty_states/emp_empty_cart.png"
           alt=""
         />

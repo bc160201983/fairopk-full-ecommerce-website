@@ -30,6 +30,7 @@ export default function Home({ categories, products }) {
           {categories.map((cat, index) => {
             return (
               <ProductsByCategory
+                key={cat.id}
                 name={cat.name}
                 index={index}
                 productsData={products[index]}

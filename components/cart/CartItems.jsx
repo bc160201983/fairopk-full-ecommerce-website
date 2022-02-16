@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { default_image } from "../Home/ProductList";
 import CartBtns from "./CartBtns";
@@ -7,10 +8,13 @@ const CartItems = ({ id, title, price, image, amount, stock_quantity }) => {
     <div>
       <div className="product-list h-[140px] mt-[2px] flex bg-white">
         <div className="product-image h-[140px] w-[124px] flex justify-center items-center">
-          <img
+          <Image
+            width={124}
+            height={140}
             className=""
+            layout="intrinsic"
             src={image === undefined ? default_image : image?.src}
-            alt=""
+            alt={title}
           />
         </div>
         <div className="product-details flex flex-col justify-between w-[208px] items-start m-[16px]">

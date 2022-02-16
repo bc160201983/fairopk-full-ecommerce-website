@@ -1,4 +1,6 @@
+import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
+
 import {
   AiOutlineShoppingCart,
   AiOutlineSearch,
@@ -46,12 +48,13 @@ const TopNav = () => {
         <div className="nav-wrraper lg:flex justify-center items-center p-1">
           <div className="left-header w-1/4 flex lg:justify-evenly justify-start mx-auto items-center">
             <div className="logo lg:visible invisible">
-              <img
+              <Image
                 width="70"
                 height="35"
+                layout="intrinsic"
                 className="object-contain"
                 src="https://i0.wp.com/fairo.pk/wp-content/uploads/2019/02/fairo.pk_d00a_04a_1_300x224.png?fit=300%2C224&ssl=1"
-                alt=""
+                alt="logo"
               />
             </div>
             <div className="delivery flex justify-center text-[16px] whitespace-nowrap items-center cursor-pointer">

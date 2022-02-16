@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import Image from "next/image";
 import { useGlobalContext } from "../../context/context";
 import AddtoCartBtns from "../AddToCartBtn/AddtoCartBtns";
 import IncAndDec from "./IncAndDec";
@@ -29,10 +29,12 @@ const ProductList = ({
         <Link href={`product/${slug}`}>
           <a>
             <div className="relative w-[126px] flex justify-center items-center h-[126px] rounded-[9px] border border-solid border-[#f2f2f2]">
-              <img
+              <Image
                 src={image === undefined ? default_image : image?.src}
                 alt=""
-                className="h-[88px] w-[88px]"
+                width={88}
+                height={88}
+                layout="intrinsic"
               />
             </div>
           </a>

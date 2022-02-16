@@ -19,3 +19,9 @@ module.exports = withFonts({
     return config;
   },
 });
+
+module.exports = {
+  images: {
+    domains: ["cdn.grofers.com", "i0.wp.com"],
+  },
+};
