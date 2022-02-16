@@ -15,7 +15,9 @@ const AppContext = React.createContext();
 // };
 
 const AppProvider = ({ children, pageProps }) => {
-  const [allCategories, setAllCategories] = useState([]);
+  const [allCategories, setAllCategories] = useState(
+    pageProps.categoriesData || []
+  );
   const [mainCategories, setMainCategories] = useState([]);
   const [cart, setCart] = useState([]);
   const [inCart, setInCart] = useState(false);
@@ -35,7 +37,6 @@ const AppProvider = ({ children, pageProps }) => {
     );
     setMainCategories(mainCategories);
   };
-  console.log(allCategories, mainCategories);
 
   const AddToCart = (id, name, price, image, stock_quantity) => {
     const newCartItem = {
@@ -110,7 +111,6 @@ const AppProvider = ({ children, pageProps }) => {
     getTotal();
   }, [cart]);
   useEffect(() => {
-    setAllCategories(pageProps.categoriesData);
     filterMianCategories();
   }, []);
 
