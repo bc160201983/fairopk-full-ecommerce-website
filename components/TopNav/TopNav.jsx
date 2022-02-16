@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 
 import {
@@ -46,18 +47,21 @@ const TopNav = () => {
     <>
       <nav className="w-full lg:h-[64px] h-auto bg-[#FFe141] sticky top-0 z-50">
         <div className="nav-wrraper lg:flex justify-center items-center p-1">
-          <div className="left-header w-1/4 flex lg:justify-evenly justify-start mx-auto items-center">
-            <div className="logo lg:visible invisible">
-              <Image
-                width="70"
-                height="35"
-                layout="intrinsic"
-                className="object-contain"
-                src="https://i0.wp.com/fairo.pk/wp-content/uploads/2019/02/fairo.pk_d00a_04a_1_300x224.png?fit=300%2C224&ssl=1"
-                alt="logo"
-              />
-            </div>
-            <div className="delivery flex justify-center text-[16px] whitespace-nowrap items-center cursor-pointer">
+          <div className="left-header w-1/4 flex lg:justify-between justify-between mx-auto items-center px-10">
+            <Link href={"/"}>
+              <a>
+                <div className="logo lg:block hidden m-0 flex-shrink-0">
+                  <Image
+                    width="70"
+                    height="50"
+                    className="object-contain"
+                    src="https://i0.wp.com/fairo.pk/wp-content/uploads/2019/02/fairo.pk_d00a_04a_1_300x224.png?fit=300%2C224&ssl=1"
+                    alt="logo"
+                  />
+                </div>
+              </a>
+            </Link>
+            <div className="delivery flex justify-center text-[14px] whitespace-nowrap items-center cursor-pointer">
               delivery in 8 minuts
               <AiOutlineDown className="ml-1" />
             </div>
