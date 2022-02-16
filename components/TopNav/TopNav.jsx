@@ -47,7 +47,7 @@ const TopNav = () => {
     <>
       <nav className="w-full lg:h-[64px] h-auto bg-[#FFe141] sticky top-0 z-50">
         <div className="nav-wrraper lg:flex justify-center items-center p-1">
-          <div className="left-header w-1/4 flex lg:justify-between justify-between mx-auto items-center px-10">
+          <div className="left-header w-1/4 flex lg:justify-evenly justify-center mx-auto items-center ">
             <Link href={"/"}>
               <a>
                 <div className="logo lg:block hidden m-0 flex-shrink-0">

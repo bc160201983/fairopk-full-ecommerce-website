@@ -6,7 +6,9 @@ import { useGlobalContext } from "../context/context";
 import Alert from "./Home/Alert";
 import Cart from "./cart/Cart";
 import CategoryNav from "./CategoryNav/CategoryNav";
+import ProductPage from "./ProductPage/ProductPage";
 import { useRouter } from "next/router";
+import Footer from "./Footer/Footer";
 
 const Layout = ({ children, pageProps }) => {
   const router = useRouter();
@@ -15,8 +17,8 @@ const Layout = ({ children, pageProps }) => {
     router.pathname === "/product/[slug]" || router.pathname === "/categories"
       ? true
       : false;
+  const showProductPage = router.pathname === "/product/[slug]" ? true : false;
 
-  console.log(showCatNav);
   return (
     <>
       <Head>
@@ -30,9 +32,12 @@ const Layout = ({ children, pageProps }) => {
       </div>
       {cartVisible && <Cart />}
       <TopNav />
-      {showCatNav && <CategoryNav />}
+      {/* {showCatNav && <CategoryNav />} */}
+
       <div className="w-full overflow-y-auto sm:h-[calc(100vh-64px)] h-[calc(100vh-129px)]">
+        {showProductPage && <ProductPage />}
         <div className="">{children}</div>
+        <Footer />
       </div>
     </>
   );

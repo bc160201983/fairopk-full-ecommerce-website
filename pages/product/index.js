@@ -4,11 +4,7 @@ import { api } from "../../lib/woo";
 const index = ({ categoriesData }) => {
   return (
     <div>
-      <div className="h-[60px] shadow-md w-full lg:block hidden">
-        <div className="wrapper max-w-screen-xl h-full mx-auto flex items-center overflow-x-auto">
-          <CategoryNav categoriesData={categoriesData} />
-        </div>
-      </div>
+      <CategoryNav categoriesData={categoriesData} />
     </div>
   );
 };

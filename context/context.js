@@ -15,9 +15,7 @@ const AppContext = React.createContext();
 // };
 
 const AppProvider = ({ children, pageProps }) => {
-  const [allCategories, setAllCategories] = useState(
-    pageProps.categoriesData || []
-  );
+  const [allCategories, setAllCategories] = useState([]);
   const [mainCategories, setMainCategories] = useState([]);
   const [cart, setCart] = useState([]);
   const [inCart, setInCart] = useState(false);
@@ -118,6 +116,8 @@ const AppProvider = ({ children, pageProps }) => {
     <AppContext.Provider
       value={{
         mainCategories,
+        setMainCategories,
+        setAllCategories,
         cartVisible,
         setCartVisible,
         openCartModal,

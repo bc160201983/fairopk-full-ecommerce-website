@@ -6,25 +6,27 @@ import { api } from "../lib/woo";
 
 export default function Home({ categories, products }) {
   return (
-    <div className="max-w-screen-xl mx-auto">
-      <Banner1 />
-      <AppdownloadBanner />
-      {/* <Slider1 /> */}
-      {categories.map((cat, index) => {
-        return (
-          <ProductsByCategory
-            key={cat.id}
-            name={cat.name}
-            index={index}
-            productsData={products[index]}
-          />
-        );
-        // return products[index].map((item) => {
-        //   console.log(item);
-        //   return <ProductsByCategory name={cat.name} />;
-        // });
-      })}
-    </div>
+    <>
+      <div className="max-w-screen-xl mx-auto">
+        <Banner1 />
+        <AppdownloadBanner />
+        {/* <Slider1 /> */}
+        {categories.map((cat, index) => {
+          return (
+            <ProductsByCategory
+              key={cat.id}
+              name={cat.name}
+              index={index}
+              productsData={products[index]}
+            />
+          );
+          // return products[index].map((item) => {
+          //   console.log(item);
+          //   return <ProductsByCategory name={cat.name} />;
+          // });
+        })}
+      </div>
+    </>
   );
 }
 
