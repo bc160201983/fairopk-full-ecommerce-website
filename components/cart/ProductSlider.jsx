@@ -20,7 +20,7 @@ const ProductSlider = ({ id, name }) => {
 
   useEffect(() => {
     fetchCatProducts();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className={`bg-white h-[350px] mb-4 ${cart.length !== 0 && `mt-2`}`}>

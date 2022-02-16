@@ -6,7 +6,7 @@ const Alert = ({ removeAlert, msg }) => {
       removeAlert(false);
     }, 3000);
     return () => clearTimeout(timeout);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="">
       <p>{msg}</p>
