@@ -14,7 +14,9 @@ const AppContext = React.createContext();
 //   }
 // };
 
-const AppProvider = ({ children }) => {
+const AppProvider = ({ children, pageProps }) => {
+  const [allCategories, setAllCategories] = useState([]);
+  const [mainCategories, setMainCategories] = useState([]);
   const [cart, setCart] = useState([]);
   const [inCart, setInCart] = useState(false);
   const [categories, setCategories] = useState([]);
@@ -27,14 +29,13 @@ const AppProvider = ({ children }) => {
     setCartVisible(true);
   };
 
-  // const fetchCategoryProducts = async () => {
-  //   const res = await api.get("products/categories", {
-  //     per_page: 10,
-  //   });
-  //   const data = await res.data;
-  //   const withProducts = data.filter((cat) => cat.count !== 0);
-  //   setCategories(withProducts);
-  // };
+  const filterMianCategories = () => {
+    const mainCategories = allCategories.filter(
+      (cat) => cat.display !== "subcategories"
+    );
+    setMainCategories(mainCategories);
+  };
+  console.log(allCategories, mainCategories);
 
   const AddToCart = (id, name, price, image, stock_quantity) => {
     const newCartItem = {
@@ -108,13 +109,15 @@ const AppProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
     getTotal();
   }, [cart]);
-  // useEffect(() => {
-  //   fetchCategoryProducts();
-  // }, []);
+  useEffect(() => {
+    setAllCategories(pageProps.categoriesData);
+    filterMianCategories();
+  }, []);
 
   return (
     <AppContext.Provider
       value={{
+        mainCategories,
         cartVisible,
         setCartVisible,
         openCartModal,

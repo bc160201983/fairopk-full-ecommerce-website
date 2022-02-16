@@ -92,7 +92,9 @@ const TopNav = () => {
           </div>
           <div className="right-header lg:w-1/4 flex justify-evenly items-center mt-2">
             <div className="categories font-[500] text-[14px]">
-              <a href="#">Categories</a>
+              <Link href={`/categories`}>
+                <a>Categories</a>
+              </Link>
             </div>
             <div className="login font-medium text-[14px]">login</div>
             <div

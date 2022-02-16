@@ -11,7 +11,12 @@ import { useRouter } from "next/router";
 const Layout = ({ children, pageProps }) => {
   const router = useRouter();
   const { alert, showAlert, cartVisible } = useGlobalContext();
-  const showCatNav = router.pathname === "/product/[slug]" ? true : false;
+  const showCatNav =
+    router.pathname === "/product/[slug]" || router.pathname === "/categories"
+      ? true
+      : false;
+
+  console.log(showCatNav);
   return (
     <>
       <Head>

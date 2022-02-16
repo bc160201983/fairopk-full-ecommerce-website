@@ -5,8 +5,8 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AppProvider>
-      <Layout pageProps={pageProps}>
+    <AppProvider pageProps={pageProps}>
+      <Layout>
         <Component {...pageProps} />
       </Layout>
     </AppProvider>
