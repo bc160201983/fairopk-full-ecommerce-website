@@ -36,8 +36,8 @@ data = [
 
 const Footer = () => {
   return (
-    <div>
-      <div className="xl:h-[155px] h-[275px] max-w-screen-xl mx-auto">
+    <div className="">
+      <div className="xl:h-[155px] h-[275px] max-w-screen-xl mx-auto  ">
         <div className="first-row grid lg:grid-cols-2 grid-cols-1 xl:grid-cols-4 gap-4 h-full">
           {data.map((item) => (
             <DeliveryIcon
@@ -49,8 +49,9 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="xl:h-[155px] h-[275px] max-w-screen-xl mx-auto">
-        <div className="secound-row">
+      <div className="xl:h-[155px] md:pt-5 lg:mt-0 mt-[100px] max-w-screen-xl mx-auto border-t-[1px] border-[#EEEEEE]">
+        <div className="secound-row px-8 pr-3 grid lg:grid-cols-2 grid-cols-1">
+          <FooterCategories />
           <FooterCategories />
         </div>
       </div>
