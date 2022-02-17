@@ -22,6 +22,6 @@ module.exports = withFonts({
 
 module.exports = {
   images: {
-    domains: ["cdn.grofers.com", "i0.wp.com"],
+    domains: ["cdn.grofers.com", "i0.wp.com", "blinkit.com"],
   },
 };
