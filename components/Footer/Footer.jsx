@@ -41,6 +41,7 @@ const Footer = () => {
         <div className="first-row grid lg:grid-cols-2 grid-cols-1 xl:grid-cols-4 gap-4 h-full">
           {data.map((item) => (
             <DeliveryIcon
+              key={item.id}
               title={item.title}
               image={item.image}
               dis={item.dis}
