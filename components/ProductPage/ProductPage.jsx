@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const ProductPage = ({ product }) => {
   const [productData, setProductData] = useState(product || []);
-  console.log(productData);
+
   return (
     <div className="max-w-screen-xl mx-auto">
       <div className="first-row grid lg:grid-cols-2 grid-cols-1 h-[400px]">
