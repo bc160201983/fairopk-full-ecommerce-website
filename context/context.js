@@ -15,6 +15,7 @@ const AppContext = React.createContext();
 // };
 
 const AppProvider = ({ children, pageProps }) => {
+  console.log(pageProps);
   const [allCategories, setAllCategories] = useState([]);
   const [mainCategories, setMainCategories] = useState([]);
   const [cart, setCart] = useState([]);

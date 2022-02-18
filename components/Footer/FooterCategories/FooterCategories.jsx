@@ -21,22 +21,39 @@ const FooterCategories = () => {
     fetchCat();
   }, []);
   return (
-    <div>
-      <div className="categories">
+    <div className=" grid lg:grid-cols-2 grid-cols-1">
+      <div className="categories border-b-[1px] md:border-r-[1px] border-[#EEEEEE]">
         <div className="font-bold">Categories</div>
         <ul className={`grid grid-cols-4 ${isLoading && `animate-pulse`} `}>
           {mainCat.map((cat) => {
             return (
               <Link key={cat.id} href={`#`}>
                 <a>
-                  <li className="font-extralight text-[12px]">{cat.name}</li>
+                  <li className="font-extralight text-[12px] text-[#666666]">
+                    {cat.name}
+                  </li>
                 </a>
               </Link>
             );
           })}
         </ul>
       </div>
-      <div className="others flex-1"></div>
+      <div className="categories lg:pl-10 pl-0 border-b-[1px] border-[#EEEEEE]">
+        <div className="font-bold">Categories</div>
+        <ul className={`grid grid-cols-4 ${isLoading && `animate-pulse`} `}>
+          {mainCat.map((cat) => {
+            return (
+              <Link key={cat.id} href={`#`}>
+                <a>
+                  <li className="font-extralight text-[12px] whitespace-nowrap text-[#666666]">
+                    {cat.name}
+                  </li>
+                </a>
+              </Link>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

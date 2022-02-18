@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import DeliveryIcon from "./DeliveryIcon/DeliveryIcon";
 import FooterCategories from "./FooterCategories/FooterCategories";
+import Social from "./Social/Social";
 
 data = [
   {
@@ -49,10 +50,14 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="xl:h-[155px] md:pt-5 lg:mt-0 mt-[100px] max-w-screen-xl mx-auto border-t-[1px] border-[#EEEEEE]">
-        <div className="secound-row px-8 pr-3 grid lg:grid-cols-2 grid-cols-1">
+      <div className="md:pt-5 lg:mt-0 mt-[100px] max-w-screen-xl mx-auto border-t-[1px] border-[#EEEEEE]">
+        <div className="secound-row px-1 pr-3">
           <FooterCategories />
-          <FooterCategories />
+        </div>
+      </div>
+      <div className="md:pt-5 lg:h-0 sm:h-[230px] h-[100px] lg:mt-0 mt-[10px] max-w-screen-xl mx-auto">
+        <div className="secound-row pl-1">
+          <Social />
         </div>
       </div>
     </div>

@@ -50,7 +50,7 @@ const CategoryNav = ({ categoriesData }) => {
           </div>
         </div>
       </div>
-      <div className="fixed bottom-[calc(100vh-111)] right-[450px] shadow-md overflow-y-scroll w-[183px] h-[661px] bg-black border-x-4"></div>
+      <div className="hidden fixed bottom-[calc(100vh-111)] right-[450px] shadow-md overflow-y-scroll w-[183px] h-[661px] bg-black border-x-4"></div>
     </div>
   );
 };

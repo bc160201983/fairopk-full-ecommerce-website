@@ -32,7 +32,7 @@ export default function Home({ categories, products }) {
 
 export async function getStaticProps(context) {
   const res = await api.get("products/categories", {
-    per_page: 2,
+    per_page: 5,
   });
   const data = await res.data;
   const withProducts = data.filter((cat) => cat.count !== 0);
