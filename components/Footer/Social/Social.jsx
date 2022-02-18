@@ -26,10 +26,12 @@ const Social = () => {
               width={104}
               height={35}
               src={"https://blinkit.com/images/home/google-play_1x-0c7086a.png"}
+              alt="google play"
             />
           </div>
           <div className="flex-shrink-0 w-[104px] h-[35px]">
             <Image
+              alt="app store"
               width={104}
               height={35}
               src={"https://blinkit.com/images/home/app-store_1x-cbeb7ea.png"}

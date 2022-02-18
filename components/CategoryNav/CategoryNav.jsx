@@ -16,6 +16,7 @@ const CategoryNav = ({ categoriesData }) => {
   useEffect(() => {
     setAllCategories(categoriesData);
     filterMianCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const showMore = () => {
