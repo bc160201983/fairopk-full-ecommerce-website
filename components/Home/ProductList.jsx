@@ -62,7 +62,7 @@ const ProductList = ({
           })}
         </div>
 
-        <Link href={`/product/${slug}`}>
+        <Link href={`/product/${slug}`} scroll={true}>
           <a>
             <div className="p-0">
               <div className="product-name pt-1 truncate text-[14px]">

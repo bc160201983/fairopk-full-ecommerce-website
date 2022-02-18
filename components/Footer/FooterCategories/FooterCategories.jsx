@@ -22,7 +22,7 @@ const FooterCategories = () => {
   }, []);
   return (
     <div className=" grid lg:grid-cols-2 grid-cols-1">
-      <div className="categories border-b-[1px] md:border-r-[1px] border-[#EEEEEE]">
+      <div className="categories sm:p-0 p-4 border-b-[1px] md:border-r-[1px] border-[#EEEEEE]">
         <div className="font-bold">Categories</div>
         <ul className={`grid grid-cols-4 ${isLoading && `animate-pulse`} `}>
           {mainCat.map((cat) => {
@@ -38,7 +38,7 @@ const FooterCategories = () => {
           })}
         </ul>
       </div>
-      <div className="categories lg:pl-10 pl-0 border-b-[1px] border-[#EEEEEE]">
+      {/* <div className="categories lg:pl-10 pl-0 border-b-[1px] border-[#EEEEEE]">
         <div className="font-bold">Categories</div>
         <ul className={`grid grid-cols-4 ${isLoading && `animate-pulse`} `}>
           {mainCat.map((cat) => {
@@ -53,7 +53,7 @@ const FooterCategories = () => {
             );
           })}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

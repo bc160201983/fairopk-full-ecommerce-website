@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
+import { BsArrowLeft } from "react-icons/bs";
 
 import {
   AiOutlineShoppingCart,
@@ -8,15 +9,18 @@ import {
   AiOutlineDown,
 } from "react-icons/ai";
 import { useGlobalContext } from "../../context/context";
+import { useRouter } from "next/router";
 
 /**
  * Hook that alerts clicks outside of the passed ref
  */
 
 const TopNav = () => {
+  const router = useRouter();
   const [visible, setVisible] = useState(false);
   const [addClass, setAddClass] = useState("");
   const wrapperRef = useRef(null);
+  const sowBackButton = router.pathname !== "/" ? true : false;
   useOutsideAlerter(wrapperRef);
   const { total, openCartModal } = useGlobalContext();
   const handleSearch = () => {
@@ -47,7 +51,16 @@ const TopNav = () => {
     <>
       <nav className="w-full lg:h-[64px] h-auto bg-[#FFe141] sticky top-0 z-50">
         <div className="nav-wrraper lg:flex justify-center items-center p-1">
-          <div className="left-header w-1/4 flex lg:justify-evenly justify-center mx-auto items-center ">
+          <div className="left-header lg:w-1/4 flex lg:justify-evenly justify-between mx-auto items-center w-full">
+            {sowBackButton && (
+              <div
+                onClick={() => router.back()}
+                className="delivery cursor-pointer lg:hidden block"
+              >
+                <BsArrowLeft className="w-7 h-7" />
+              </div>
+            )}
+
             <Link href={"/"}>
               <a>
                 <div className="logo lg:block hidden m-0 flex-shrink-0">
@@ -61,9 +74,18 @@ const TopNav = () => {
                 </div>
               </a>
             </Link>
+
             <div className="delivery flex justify-center text-[14px] whitespace-nowrap items-center cursor-pointer">
               delivery in 8 minuts
               <AiOutlineDown className="ml-1" />
+            </div>
+            <div className="mobile-menu flex flex-row-reverse">
+              <div className="cart-icon">
+                <AiOutlineShoppingCart className="h-[28px] w-[28px]" />
+              </div>
+              <div className="cart-icon">
+                <AiOutlineSearch className="h-[28px] w-[28px]" />
+              </div>
             </div>
           </div>
           <div
