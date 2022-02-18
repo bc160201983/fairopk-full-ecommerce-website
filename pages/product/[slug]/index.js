@@ -1,11 +1,12 @@
 import CategoryNav from "../../../components/CategoryNav/CategoryNav";
 import { api } from "../../../lib/woo";
+import ProductPage from "../../../components/ProductPage/ProductPage";
 
 const product = ({ product, mainCat }) => {
   return (
     <div>
       <CategoryNav categoriesData={mainCat} />
-      <h2>{product[0].name}</h2>
+      <ProductPage product={product} />
     </div>
   );
 };

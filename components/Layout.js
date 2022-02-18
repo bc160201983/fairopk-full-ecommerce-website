@@ -35,7 +35,7 @@ const Layout = ({ children, pageProps }) => {
       {/* {showCatNav && <CategoryNav />} */}
 
       <div className="w-full overflow-y-auto sm:h-[calc(100vh-64px)] h-[calc(100vh-129px)]">
-        {showProductPage && <ProductPage />}
+        {/* {showCatNav && <ProductPage />} */}
         <div className="">{children}</div>
         <Footer />
       </div>

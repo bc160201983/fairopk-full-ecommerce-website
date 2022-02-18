@@ -38,7 +38,7 @@ data = [
 const Footer = () => {
   return (
     <div className="">
-      <div className="xl:h-[155px] h-[275px] max-w-screen-xl mx-auto  ">
+      <div className="xl:h-[155px] h-[275px] max-w-screen-xl mx-auto">
         <div className="first-row grid lg:grid-cols-2 grid-cols-1 xl:grid-cols-4 gap-4 h-full">
           {data.map((item) => (
             <DeliveryIcon
