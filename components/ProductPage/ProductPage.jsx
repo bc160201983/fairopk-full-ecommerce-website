@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import ImageSlider from "./ImageSlider/ImageSlider";
+import RelatedProducts from "./RelatedProducts/RelatedProducts";
 
 const ProductPage = ({ product }) => {
   const [productData, setProductData] = useState(product || []);
+  const RelatedProduct = productData[0].related_ids;
 
   return (
     <div className="max-w-screen-xl pt-5 mx-auto border-b-[4px] border-gray-200">
@@ -43,6 +45,14 @@ const ProductPage = ({ product }) => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="related-products h-[338px]  border-t-[4px] border-gray-200">
+        <div className="title py-4 pl-4 w-full text-[18px] font-bold">
+          <h1>you may also like</h1>
+        </div>
+        <div className="products">
+          <RelatedProducts related_ids={RelatedProduct} />
         </div>
       </div>
     </div>

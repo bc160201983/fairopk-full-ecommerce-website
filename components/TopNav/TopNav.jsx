@@ -112,32 +112,34 @@ const TopNav = () => {
               )}
             </div>
           </div>
-          <div className="right-header lg:w-1/4 flex justify-evenly items-center mt-2">
-            <div className="categories font-[500] text-[14px]">
-              <Link href={`/categories`}>
-                <a>Categories</a>
-              </Link>
-            </div>
-            <div className="login font-medium text-[14px]">login</div>
-            <div
-              onClick={() => openCartModal(true)}
-              className="hover:bg-[#499220] text-sm text-white w-[92px] h-[40px] cart rounded-[58px] flex justify-center items-center bg-[#0c831f] cursor-pointer hover:transition-all"
-            >
-              <span className="flex justify-center text-center flex-shrink-0 pr-2">
-                <AiOutlineShoppingCart className="w-[16px] h-[16px]" />
-              </span>
-              {total.amount !== 0 ? (
-                <div className="flex flex-col justify-start items-center">
-                  <div className="item-count text-[12px] text-left pt-2 pr-2 font-[200]">
-                    {total.amount} items
+          <div className="right-header lg:w-1/4 lg:block hidden">
+            <div className="flex justify-evenly items-center mt-2">
+              <div className="categories font-[500] text-[14px]">
+                <Link href={`/categories`}>
+                  <a>Categories</a>
+                </Link>
+              </div>
+              <div className="login font-medium text-[14px]">login</div>
+              <div
+                onClick={() => openCartModal(true)}
+                className="hover:bg-[#499220] text-sm text-white w-[92px] h-[40px] cart rounded-[58px] flex justify-center items-center bg-[#0c831f] cursor-pointer hover:transition-all"
+              >
+                <span className="flex justify-center text-center flex-shrink-0 pr-2">
+                  <AiOutlineShoppingCart className="w-[16px] h-[16px]" />
+                </span>
+                {total.amount !== 0 ? (
+                  <div className="flex flex-col justify-start items-center">
+                    <div className="item-count text-[12px] text-left pt-2 pr-2 font-[200]">
+                      {total.amount} items
+                    </div>
+                    <div className="cart-item-total font-bold text-[12px] pb-2 pr-2">
+                      Rs{total.total}
+                    </div>
                   </div>
-                  <div className="cart-item-total font-bold text-[12px] pb-2 pr-2">
-                    Rs{total.total}
-                  </div>
-                </div>
-              ) : (
-                <div className="font-[200] text-[14px]">my cart</div>
-              )}
+                ) : (
+                  <div className="font-[200] text-[14px]">my cart</div>
+                )}
+              </div>
             </div>
           </div>
         </div>

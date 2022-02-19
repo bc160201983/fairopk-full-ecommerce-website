@@ -4,6 +4,7 @@ import { default_image } from "../Home/ProductList";
 import AddBtn from "./AddBtn";
 import AddtoCartBtns from "../AddToCartBtn/AddtoCartBtns";
 import Image from "next/image";
+import Link from "next/link";
 
 const CartProductList = ({
   id,
@@ -12,21 +13,26 @@ const CartProductList = ({
   name,
   stock_quantity,
   stock_status,
+  slug,
 }) => {
   const { cart, outOfStock, AddToCart } = useGlobalContext();
   const image = images[0];
   return (
     <div className="">
       <div className="product px-2 h-[270px] w-[244px] bg-white mr-0">
-        <div className="image flex justify-center items-center mx-auto h-[140px] w-[140px]">
-          <Image
-            src={image === undefined ? default_image : image?.src}
-            alt=""
-            width={140}
-            height={140}
-            layout="intrinsic"
-          />
-        </div>
+        <Link href={`/product/${slug}`}>
+          <a>
+            <div className="image flex justify-center items-center mx-auto h-[140px] w-[140px]">
+              <Image
+                src={image === undefined ? default_image : image?.src}
+                alt=""
+                width={140}
+                height={140}
+                layout="intrinsic"
+              />
+            </div>
+          </a>
+        </Link>
         <div className="item-details">
           <div className="price font-bold text-[16px] w-full">
             Rs{Math.trunc(price)}
@@ -35,6 +41,7 @@ const CartProductList = ({
             {name.slice(0, 20)}
           </div>
           <div className="weight text-xs mt-1 mb-2">500 g</div>
+
           <div className="btn relative">
             <AddBtnSlider
               id={id}
@@ -88,7 +95,7 @@ const AddBtnSlider = ({
               ${hide ? "hidden" : `block`}
             ${
               outOfStock(stock_status) ? `bg-[#ccad00]` : `bg-white`
-            } cursor-pointer rounded-[4px] cursor-pointe bottom-1 w-full flex justify-center items-center border border-solid border-[cccccc]`}
+            } cursor-pointer rounded-[4px] cursor-pointe bottom-1 w-full flex justify-center items-center border border-solid border-[cccccc] shadow-md`}
     >
       {outOfStock(stock_status) ? (
         <div

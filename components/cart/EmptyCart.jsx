@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const EmptyCart = () => {
@@ -20,7 +21,9 @@ const EmptyCart = () => {
         <p>your favourite items are just a click away</p>
       </div>
       <div className="btn bg-[#0c831f] p-2 text-white rounded-[4px] text-center w-[174px] cursor-pointer">
-        <div className="px-2 text-[12px]">start shopping</div>
+        <Link href={"/"} passHref>
+          <div className="px-2 text-[12px]">start shopping</div>
+        </Link>
       </div>
     </div>
   );
