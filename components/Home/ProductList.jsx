@@ -26,7 +26,7 @@ const ProductList = ({
   return (
     <div>
       <div className="product-info relative flex flex-col hover:transition-all hover:rounded-[9px]">
-        <Link href={`/product/${slug}`} scroll={true}>
+        <Link href={`/product/${slug}`}>
           <a>
             <div className="relative w-[126px] flex justify-center items-center h-[126px] rounded-[9px] border border-solid border-[#f2f2f2]">
               <Image

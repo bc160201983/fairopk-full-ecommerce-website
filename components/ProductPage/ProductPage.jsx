@@ -2,10 +2,20 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import ImageSlider from "./ImageSlider/ImageSlider";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
-
+import { useRouter } from "next/router";
 const ProductPage = ({ product }) => {
+  const router = useRouter();
   const [productData, setProductData] = useState(product || []);
   const RelatedProduct = productData[0].related_ids;
+  useEffect(() => {
+    router.events.on("routeChangeComplete", () => {
+      window.scroll({
+        top: 1,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+  });
 
   return (
     <div className="max-w-screen-xl pt-5 mx-auto border-b-[4px] border-gray-200">

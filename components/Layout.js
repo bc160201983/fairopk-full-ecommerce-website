@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 useRouter;
 import Head from "next/head";
 import TopNav from "./TopNav/TopNav";
@@ -7,7 +7,7 @@ import Alert from "./Home/Alert";
 import Cart from "./cart/Cart";
 import CategoryNav from "./CategoryNav/CategoryNav";
 import ProductPage from "./ProductPage/ProductPage";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import Footer from "./Footer/Footer";
 
 const Layout = ({ children, pageProps }) => {
