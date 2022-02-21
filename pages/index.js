@@ -11,6 +11,7 @@ export default function Home({ categories, products }) {
         <Banner1 />
         <AppdownloadBanner />
         {/* <Slider1 /> */}
+
         {categories.map((cat, index) => {
           return (
             <ProductsByCategory
@@ -20,10 +21,6 @@ export default function Home({ categories, products }) {
               productsData={products[index]}
             />
           );
-          // return products[index].map((item) => {
-          //   console.log(item);
-          //   return <ProductsByCategory name={cat.name} />;
-          // });
         })}
       </div>
     </>

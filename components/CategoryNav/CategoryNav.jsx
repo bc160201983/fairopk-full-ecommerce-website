@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useGlobalContext } from "../../context/context";
 import { AiOutlineDown } from "react-icons/ai";
+import Link from "next/link";
 
 const CategoryNav = ({ categoriesData }) => {
   const { setAllCategories } = useGlobalContext();
@@ -25,17 +26,22 @@ const CategoryNav = ({ categoriesData }) => {
   };
 
   return (
-    <div className="w-full">
-      <div className="h-[47px] shadow-md  w-full lg:block hidden">
+    <div className="w-full ">
+      <div className="h-[47px]  shadow-md w-full lg:block hidden">
         <div className="wrapper max-w-screen-lg h-full mx-auto flex items-center overflow-y-auto">
           {mainCategories.slice(0, rowsToDisplay).map((cat) => {
             return (
-              <div
+              <Link
                 key={cat.id}
-                className="py-[14px] px-[20px] h-full text-[16px] text-[#666666] hover:bg-gray-100 cursor-pointer whitespace-nowrap"
+                href={`/product-category/${cat.slug}`}
+                passHref
               >
-                {cat.name}
-              </div>
+                <a>
+                  <div className="py-[14px] px-[20px] h-full text-[16px] text-[#666666] hover:bg-gray-100 cursor-pointer whitespace-nowrap">
+                    {cat.name}
+                  </div>
+                </a>
+              </Link>
             );
           })}
           <div

@@ -9,14 +9,16 @@ const ImageSlider = ({ image }) => {
   return (
     <div>
       <Wrapper>
-        <Image
-          src={main}
-          width={346}
-          height={346}
-          alt="main"
-          className="main shadow-lg"
-        />
-        <div className="gallery">
+        <div className="sm:w-[346px] sm:h-[346px] h-[300px] w-[300px] flex justify-center items-center">
+          <Image
+            src={main}
+            width={242}
+            height={285}
+            alt="main"
+            className="shadow-lg"
+          />
+        </div>
+        {/* <div className="gallery">
           {image.map((image, index) => {
             return (
               <Image
@@ -30,22 +32,23 @@ const ImageSlider = ({ image }) => {
               />
             );
           })}
-        </div>
+        </div> */}
       </Wrapper>
     </div>
   );
 };
 
 const Wrapper = styled.section`
-  .main {
-    height: 400px;
-  }
-  img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* img {
     width: 100%;
     display: block;
     border-radius: 0.25rem;
     object-fit: cover;
-  }
+  } */
   .gallery {
     margin-bottom: 1rem;
     display: grid;
@@ -59,7 +62,7 @@ const Wrapper = styled.section`
   .active {
     border: 2px solid #0c831f;
   }
-  @media (max-width: 576px) {
+  /* @media (max-width: 576px) {
     .main {
       height: 300px;
     }
@@ -78,7 +81,7 @@ const Wrapper = styled.section`
         height: 75px;
       }
     }
-  }
+  } */
 `;
 
 export default ImageSlider;

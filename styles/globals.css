@@ -16,6 +16,9 @@ body {
 }
 
 @layer components {
+  .active {
+    @apply bg-gray-200 font-bold border-l-4 border-[#0C831F] text-[18px] text-[#666];
+  }
   .snackbar {
     @apply invisible sm:min-w-[250px] min-w-[50px] sm:ml-[-125px] ml-[-50px]  bg-[#333] opacity-[0.7] text-[#fff] text-center rounded-[2px] p-[16px] fixed z-[1] sm:left-[50%] left-[17%] bottom-[30px] text-[17px];
   }

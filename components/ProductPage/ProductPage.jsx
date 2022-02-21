@@ -18,15 +18,15 @@ const ProductPage = ({ product }) => {
   });
 
   return (
-    <div className="max-w-screen-xl pt-5 mx-auto border-b-[4px] border-gray-200">
+    <div className="max-w-screen-xl pt- mx-auto border-b-[4px] border-gray-200">
       <div className="first-row grid lg:grid-cols-2 grid-cols-1">
-        <div className="image-slider flex-1 flex justify-center items-center">
-          <div className="carusal">
+        <div className="image-slider w-full flex-1 flex justify-center items-center">
+          <div className="mx-auto">
             <ImageSlider image={productData[0].images} />
           </div>
         </div>
         <div className="product-info pt-5 flex-1 flex flex-col justify-evenly mt-5">
-          <div className="info px-4">
+          <div className="info px-4 lg:pb-0 pb-5">
             <div className="title-btn my-2 flex justify-between">
               <div className="name pr-[2px] md:font-bold md:text-black text-[#666666] md:text-[16px] text-[14px]">
                 {productData[0].name}

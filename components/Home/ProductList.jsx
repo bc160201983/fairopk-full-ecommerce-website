@@ -25,10 +25,10 @@ const ProductList = ({
 
   return (
     <div>
-      <div className="product-info relative flex flex-col hover:transition-all hover:rounded-[9px]">
+      <div className="product-info relative lg:w-[126px] w-[96px] lg:px-0 px-1 flex flex-col hover:transition-all hover:rounded-[9px]">
         <Link href={`/product/${slug}`}>
           <a>
-            <div className="relative w-[126px] flex justify-center items-center h-[126px] rounded-[9px] border border-solid border-[#f2f2f2]">
+            <div className="relative lg:w-[126px] w-[90px] h-[90]  flex justify-center items-center lg:h-[126px] rounded-[9px] border border-solid border-[#f2f2f2]">
               <Image
                 src={image === undefined ? default_image : image?.src}
                 alt=""
@@ -65,11 +65,13 @@ const ProductList = ({
         <Link href={`/product/${slug}`} scroll={true}>
           <a>
             <div className="p-0">
-              <div className="product-name pt-1 truncate text-[14px]">
+              <div className="product-name pt-1 lg:pb-0 pb-2 truncate lg:text-[14px] text-[12px]">
                 {name?.slice(0, 15)}
               </div>
-              <div className="weight whitespace-nowrap">1Kg</div>
-              <div className="price whitespace-nowrap font-bold	">
+              <div className="weight whitespace-nowrap lg:text-[16px] text-[12px]">
+                1Kg
+              </div>
+              <div className="price whitespace-nowrap font-bold	lg:text-[16px] text-[12px]">
                 Rs
                 {Math.trunc(price)}
               </div>

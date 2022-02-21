@@ -14,7 +14,7 @@ const Layout = ({ children, pageProps }) => {
   const router = useRouter();
   const { alert, showAlert, cartVisible } = useGlobalContext();
   const showCatNav =
-    router.pathname === "/product/[slug]" || router.pathname === "/categories"
+    router.pathname === "/product-category" || router.pathname === "/categories"
       ? true
       : false;
   const showProductPage = router.pathname === "/product/[slug]" ? true : false;
@@ -32,7 +32,7 @@ const Layout = ({ children, pageProps }) => {
       </div>
       {cartVisible && <Cart />}
       <TopNav />
-      {/* {showCatNav && <CategoryNav />} */}
+      {/* {showCatNav && <CategoryNav categoriesData={mainCategories} />} */}
 
       <div className="w-full overflow-y-auto sm:h-[calc(100vh-64px)] h-[calc(100vh-129px)]">
         {/* {showCatNav && <ProductPage />} */}

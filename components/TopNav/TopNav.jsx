@@ -10,6 +10,7 @@ import {
 } from "react-icons/ai";
 import { useGlobalContext } from "../../context/context";
 import { useRouter } from "next/router";
+import Search from "./search/Search";
 
 /**
  * Hook that alerts clicks outside of the passed ref
@@ -79,12 +80,9 @@ const TopNav = () => {
               delivery in 8 minuts
               <AiOutlineDown className="ml-1" />
             </div>
-            <div className="mobile-menu flex flex-row-reverse">
-              <div className="cart-icon">
+            <div className="mobile-menu lg:hidden inline-block flex flex-row-reverse">
+              <div className="cart-icon mr-2">
                 <AiOutlineShoppingCart className="h-[28px] w-[28px]" />
-              </div>
-              <div className="cart-icon">
-                <AiOutlineSearch className="h-[28px] w-[28px]" />
               </div>
             </div>
           </div>
@@ -92,25 +90,7 @@ const TopNav = () => {
             className=" middle-header lg:w-1/2 w-full mx-auto mt-2"
             onClick={handleSearch}
           >
-            <div className="search-input  border-solid	border-[D8D8D8] relative">
-              <button className="absolute block top-0	left-0 h-[42px] w-[40px] text-[#999999] leading-[27.6px] pl-2 text-[24px]">
-                <AiOutlineSearch className="" />
-              </button>
-              <input
-                placeholder="Search for products"
-                className={`w-full rounded-t-[8px] h-11 mr-[-43px] pr-[16px] pl-[48px] focus:outline-none ${
-                  visible || "rounded-[8px]"
-                }`}
-                type="text"
-              />
-              {visible && (
-                <div
-                  ref={wrapperRef}
-                  id="myModal"
-                  className={`search-modal bg-white w-full h-52 absolute rounded-b-[8px] z-[2001] my-modal ease-in duration-300	`}
-                ></div>
-              )}
-            </div>
+            <Search />
           </div>
           <div className="right-header lg:w-1/4 lg:block hidden">
             <div className="flex justify-evenly items-center mt-2">

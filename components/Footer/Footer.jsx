@@ -39,7 +39,7 @@ const Footer = () => {
   return (
     <div className="">
       <div className="xl:h-[155px] h-[275px] max-w-screen-xl mx-auto">
-        <div className="first-row grid lg:grid-cols-2 grid-cols-1 xl:grid-cols-4 gap-4 xl:p-0 p-4 h-full">
+        <div className="first-row grid lg:grid-cols-2 grid-cols-1 xl:grid-cols-4 gap-4 xl:p-1 p-4 h-full">
           {data.map((item) => (
             <DeliveryIcon
               key={item.id}
@@ -51,12 +51,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="md:pt-5 lg:mt-0 mt-[100px] max-w-screen-xl mx-auto border-t-[1px] border-[#EEEEEE]">
-        <div className="secound-row p-4">
+        <div className="secound-row p-2">
           <FooterCategories />
         </div>
       </div>
       <div className="md:pt-5 lg:h-0 sm:h-[230px] h-[100px] lg:mt-0 mt-[10px] max-w-screen-xl mx-auto">
-        <div className="secound-row pl-1 pb-2">
+        <div className="secound-row sm:p-2 pl-5">
           <Social />
         </div>
       </div>
