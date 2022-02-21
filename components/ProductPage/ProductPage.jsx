@@ -7,6 +7,8 @@ const ProductPage = ({ product }) => {
   const router = useRouter();
   const [productData, setProductData] = useState(product || []);
   const RelatedProduct = productData[0].related_ids;
+
+  console.log(productData[0].categories);
   useEffect(() => {
     router.events.on("routeChangeComplete", () => {
       window.scroll({
@@ -37,7 +39,9 @@ const ProductPage = ({ product }) => {
             </div>
             <div className="unit mb-2 text-[14px] md:text-black text-[#666666]">
               Category :
-              <Link href={"#"}>
+              <Link
+                href={`/product-category/${productData[0].categories[0].slug}`}
+              >
                 <a>{productData[0].categories[0].name}</a>
               </Link>
             </div>

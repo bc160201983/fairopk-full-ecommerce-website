@@ -27,7 +27,7 @@ const FooterCategories = () => {
         <ul className={`grid grid-cols-4 ${isLoading && `animate-pulse`} `}>
           {mainCat.map((cat) => {
             return (
-              <Link key={cat.id} href={`#`}>
+              <Link key={cat.id} href={`/product-category/${cat.slug}`}>
                 <a>
                   <li className="font-extralight text-[12px] text-[#666666]">
                     {cat.name}

@@ -27,7 +27,7 @@ const CategoryNav = ({ categoriesData }) => {
 
   return (
     <div className="w-full ">
-      <div className="h-[47px]  shadow-md w-full lg:block hidden">
+      <div className="h-[55px] shadow-md w-full lg:block hidden">
         <div className="wrapper max-w-screen-lg h-full mx-auto flex items-center overflow-y-auto">
           {mainCategories.slice(0, rowsToDisplay).map((cat) => {
             return (
