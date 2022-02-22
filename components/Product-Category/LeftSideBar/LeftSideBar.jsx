@@ -18,7 +18,7 @@ const LeftSideBar = ({ parent, sub }) => {
         </div>
       </div>
       {sub.map((cat, index) => {
-        const { name, id, count } = cat;
+        const { name, id, count, slug } = cat;
         return (
           <CatList
             key={id}
@@ -26,6 +26,7 @@ const LeftSideBar = ({ parent, sub }) => {
             id={id}
             setMain={setMain}
             main={main}
+            slug={slug}
             count={count}
           />
         );

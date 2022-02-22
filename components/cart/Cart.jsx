@@ -63,7 +63,7 @@ const Cart = () => {
           </div>
         </div>
         <div
-          className={`contant bg-gray-200 overflow-y-auto ${
+          className={`contant scrollbar-thin scrollbar-thumb-custom scrollbar-track-custom-light bg-gray-200 overflow-y-auto ${
             cart.length !== 0 ? `h-[calc(100vh-132px)]` : `h-full`
           } `}
         >

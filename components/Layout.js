@@ -39,7 +39,7 @@ const Layout = ({ children, pageProps }) => {
       <TopNav />
       {/* {showCatNav && <CategoryNav categoriesData={data} />} */}
       {/* sm:h-[calc(100vh-64px)] h-[calc(100vh-129px)] overflow-y-auto */}
-      <div className="w-full  ">
+      <div className="w-full">
         {/* {showCatNav && <ProductPage />} */}
         <div className="">{children}</div>
         <Footer />

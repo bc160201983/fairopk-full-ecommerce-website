@@ -1,7 +1,8 @@
+import { Router } from "next/router";
 import React, { useContext } from "react";
 import { useGlobalContext } from "../../../../context/context";
 
-const CatList = ({ id, name, setMain, count, main }) => {
+const CatList = ({ id, name, setMain, count, main, slug }) => {
   const { catId, setCatId } = useGlobalContext();
   return (
     <div>

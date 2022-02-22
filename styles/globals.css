@@ -16,6 +16,9 @@ body {
 }
 
 @layer components {
+  body {
+    @apply scrollbar-thin scrollbar-thumb-custom scrollbar-track-custom-light;
+  }
   .loading {
     @apply absolute top-[50%] left-[55%] mr-[-50%];
   }
