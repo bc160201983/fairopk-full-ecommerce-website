@@ -8,17 +8,6 @@ const ProductPage = ({ product }) => {
   const [productData, setProductData] = useState(product || []);
   const RelatedProduct = productData[0].related_ids;
 
-  console.log(productData[0].categories);
-  useEffect(() => {
-    router.events.on("routeChangeComplete", () => {
-      window.scroll({
-        top: 1,
-        left: 0,
-        behavior: "smooth",
-      });
-    });
-  });
-
   return (
     <div className="max-w-screen-xl pt- mx-auto border-b-[4px] border-gray-200">
       <div className="first-row grid lg:grid-cols-2 grid-cols-1">

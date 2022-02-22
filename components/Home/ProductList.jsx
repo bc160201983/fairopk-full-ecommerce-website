@@ -26,7 +26,13 @@ const ProductList = ({
   return (
     <div>
       <div className="product-info relative lg:w-[126px] w-[96px] lg:px-0 px-1 flex flex-col hover:transition-all hover:rounded-[9px]">
-        <Link href={`/product/${slug}`}>
+        <Link
+          href={`/product/[slug]`}
+          as={`/product/${slug}`}
+          beforePopState={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
           <a>
             <div className="relative lg:w-[126px] w-[90px] h-[90]  flex justify-center items-center lg:h-[126px] rounded-[9px] border border-solid border-[#f2f2f2]">
               <Image

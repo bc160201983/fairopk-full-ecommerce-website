@@ -6,6 +6,7 @@ import { AppProvider } from "../context/context";
 import { api } from "../lib/woo";
 import "../styles/globals.css";
 import Router from "next/router";
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 

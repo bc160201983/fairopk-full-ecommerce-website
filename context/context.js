@@ -17,6 +17,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children, pageProps }) => {
   const [allCategories, setAllCategories] = useState([]);
   const [mainCategories, setMainCategories] = useState([]);
+  const [catId, setCatId] = useState(null);
   const [cart, setCart] = useState([]);
   const [inCart, setInCart] = useState(false);
   const [categories, setCategories] = useState([]);
@@ -115,6 +116,8 @@ const AppProvider = ({ children, pageProps }) => {
   return (
     <AppContext.Provider
       value={{
+        catId,
+        setCatId,
         mainCategories,
         setMainCategories,
         setAllCategories,

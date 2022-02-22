@@ -10,12 +10,15 @@
 
 body {
   font-family: "Helvetica";
-  overflow: hidden;
+
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
 
 @layer components {
+  .loading {
+    @apply absolute top-[50%] left-[55%] mr-[-50%];
+  }
   .active {
     @apply bg-gray-200 font-bold border-l-4 border-[#0C831F] text-[18px] text-[#666];
   }

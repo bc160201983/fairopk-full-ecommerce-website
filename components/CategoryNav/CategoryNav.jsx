@@ -4,7 +4,7 @@ import { AiOutlineDown } from "react-icons/ai";
 import Link from "next/link";
 
 const CategoryNav = ({ categoriesData }) => {
-  const { setAllCategories } = useGlobalContext();
+  const [allCategories, setAllCategories] = useState(categoriesData);
   const [mainCategories, setMainCategories] = useState([]);
   const [rowsToDisplay, setRowsToDisplay] = useState(7);
   const filterMianCategories = () => {
@@ -15,7 +15,6 @@ const CategoryNav = ({ categoriesData }) => {
   };
 
   useEffect(() => {
-    setAllCategories(categoriesData);
     filterMianCategories();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
