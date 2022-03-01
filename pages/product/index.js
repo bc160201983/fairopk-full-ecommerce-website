@@ -2,7 +2,11 @@ import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import { api } from "../../lib/woo";
 
 const index = ({ categoriesData }) => {
-  return <div>{/* <CategoryNav categoriesData={categoriesData} /> */}</div>;
+  return (
+    // <div>
+    //   <CategoryNav categoriesData={categoriesData} />
+    // </div>
+  );
 };
 
 export default index;

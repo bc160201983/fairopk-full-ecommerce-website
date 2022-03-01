@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ImageSlider from "./ImageSlider/ImageSlider";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import { useRouter } from "next/router";
+import Head from "next/head";
 const ProductPage = ({ product }) => {
   const router = useRouter();
   const [productData, setProductData] = useState(product || []);
@@ -10,6 +11,10 @@ const ProductPage = ({ product }) => {
 
   return (
     <div className="max-w-screen-xl pt- mx-auto border-b-[4px] border-gray-200">
+      <Head>
+        <title>{productData[0].name}</title>
+        <meta property="og:title" content={productData[0].name} key="title" />
+      </Head>
       <div className="first-row grid lg:grid-cols-2 grid-cols-1">
         <div className="image-slider w-full flex-1 flex justify-center items-center">
           <div className="mx-auto">

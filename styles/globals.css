@@ -38,6 +38,10 @@ body {
   .product {
     @apply rounded-lg my-[2px] mx-4 border-[1px] border-solid border-[#f2f2f2];
   }
+
+  .breadcrum {
+    @apply hover:text-[#333333] hover:transition-all hover:underline hover:underline-offset-1;
+  }
 }
 
 @layer utilities {

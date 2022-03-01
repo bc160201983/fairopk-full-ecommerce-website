@@ -5,7 +5,7 @@ import ProductPage from "../../../components/ProductPage/ProductPage";
 const product = ({ product, mainCat }) => {
   return (
     <div>
-      {/* <CategoryNav categoriesData={mainCat} /> */}
+      <CategoryNav categoriesData={mainCat} />
       <ProductPage product={product} />
     </div>
   );

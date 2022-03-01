@@ -12,7 +12,7 @@ const CatList = ({ id, name, setMain, count, main, slug }) => {
           onClick={() => setCatId(id)}
           className={` ${
             catId === id ? `active` : null
-          } h-full w-full pt-[17px] pr-[14px] pb-[18px] pl-[50px] float-left text-[14px] text-[#666] flex`}
+          } h-full w-full pt-[17px] pr-[14px] pb-[18px] pl-[30px] float-left text-[14px] text-[#666] flex whitespace-nowrap`}
         >
           {name}
           <div className="ml-2">({count})</div>

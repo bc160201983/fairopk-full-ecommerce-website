@@ -28,7 +28,7 @@ const Layout = ({ children, pageProps }) => {
   return (
     <>
       <Head>
-        <title>Fairo.pk - Home</title>
+        <title>Online Grocery Store in Faisalabad - Fairo.pk</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

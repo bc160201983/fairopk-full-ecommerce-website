@@ -9,7 +9,7 @@ const index = ({ data }) => {
   return (
     <>
       <div className="bg-white sticky top-0">
-        {/* <CategoryNav categoriesData={mainCat} /> */}
+        <CategoryNav categoriesData={data.allCatData} />
       </div>
       <div className="bg-[#F9F9F9] h-screen">
         <ProductCategory data={data} />
@@ -36,7 +36,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      data: { parent, sub: subCat },
+      data: { parent, sub: subCat, allCatData },
     }, // will be passed to the page component as props
   };
 }
