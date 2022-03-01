@@ -8,6 +8,7 @@ import ProductList from "./RightSideBar/ProductList";
 import Link from "next/link";
 import Head from "next/head";
 import { AiOutlineRight } from "react-icons/ai";
+import Image from "next/image";
 
 const ProductCategory = ({ data }) => {
   const router = useRouter();
@@ -98,7 +99,7 @@ const ProductCategory = ({ data }) => {
           </div>
           {isLoading ? (
             <div className="loading">
-              <img src={Loader.src} />
+              <Image src={Loader.src} width={100} height={100} alt="loading" />
             </div>
           ) : (
             products.map((p) => {
