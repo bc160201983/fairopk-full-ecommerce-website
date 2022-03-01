@@ -10,9 +10,9 @@ const ProductList = ({ name, price, sku, images, slug }) => {
   return (
     <div className="">
       <Link href={`/product/${slug}`} scroll={true} passHref>
-        <div className="md:m-0 mt-[16px] mr-[6px] mb-[0px] ml-[6px] md:rounded-none md:shadow-none rounded-[3px] shadow-md bg-white cursor-pointer min-h-[300px] min-w-[240px] flex flex-col justify-between p-3 border border-r-[white] border-t-[white] border-[#CCCCCC]">
+        <div className="cat-product-info md:m-0 mt-[16px] mr-[6px] mb-[0px] ml-[6px] md:rounded-none md:shadow-none rounded-[3px] shadow-md bg-white cursor-pointer min-h-[300px] min-w-[240px] flex flex-col justify-between p-3 border border-r-[white] border-t-[white] border-[#EEEEEE] md:hover:border-[#CCCCCC]">
           <div className="image-part space-y-5">
-            <div className="image w-[140px] h-[140px] mx-auto flex-shrink-0">
+            <div className="image-loader w-[140px] h-[140px] mx-auto flex-shrink-0">
               <Image
                 src={image === undefined ? default_image : image?.src}
                 width={120}

@@ -13,12 +13,19 @@ import MobileCat from "./LeftSideBar/MobileCat/MobileCat";
 
 const ProductCategory = ({ data }) => {
   const router = useRouter();
-  //const mainCatslug = router.query.mainCatslug.split("-");
-  const { catId } = useGlobalContext();
+  const mainCatslug = router.query.mainCatslug;
+
+  const { catId, setCatId, NavMainCategories } = useGlobalContext();
   const [isLoading, setIsLoading] = useState(true);
   const [parentName, setParentName] = useState(data.parent[0].name);
   const [subName, setSubName] = useState({ main: data.parent[0].name });
   const [products, setProducts] = useState([]);
+
+  const filterCat = () => {
+    const mainCat = NavMainCategories.filter((cat) => cat.slug === mainCatslug);
+    const id = mainCat[0]?.id;
+    setCatId(id);
+  };
 
   const fetchProduct = async (id) => {
     setIsLoading(true);
@@ -41,6 +48,10 @@ const ProductCategory = ({ data }) => {
   // const slugMaker = () => {
   //   console.log(data.sub);
   // };
+
+  useEffect(() => {
+    filterCat();
+  }, [mainCatslug]);
   useEffect(() => {
     mainCatName(catId);
     //slugMaker();
@@ -50,7 +61,7 @@ const ProductCategory = ({ data }) => {
   return (
     <div className="max-w-screen-xl mx-auto h-full pt-5 pb-5">
       <div className="content flex shadow-md h-full bg-white">
-        <div className="self-start basis-1/4 lg:block hidden border sticky top-[120px] border-[#EEEEEE]">
+        <div className="self-start basis-1/4 lg:block hidden border-[1px] sticky top-[120px] border-[#EEEEEE]">
           <LeftSideBar parent={data.parent} sub={data.sub} />
         </div>
 
@@ -98,7 +109,7 @@ const ProductCategory = ({ data }) => {
             <div className="current-category font-[600] flex pt-[5px] pb-[15px] md:text-[16px] text-[13px]">
               {parentName || subName}
             </div>
-            <div className="mobile-cat-nav lg:hidden block">
+            <div className="mobile-cat-nav lg:hidden block overflow-x-auto">
               <MobileCat parent={data.parent} sub={data.sub} />
             </div>
           </div>

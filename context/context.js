@@ -15,6 +15,7 @@ const AppContext = React.createContext();
 // };
 
 const AppProvider = ({ children, pageProps }) => {
+  const [NavMainCategories, setNavMainCategories] = useState([]);
   const [allCategories, setAllCategories] = useState([]);
   const [mainCategories, setMainCategories] = useState([]);
   const [catId, setCatId] = useState(null);
@@ -116,6 +117,8 @@ const AppProvider = ({ children, pageProps }) => {
   return (
     <AppContext.Provider
       value={{
+        NavMainCategories,
+        setNavMainCategories,
         catId,
         setCatId,
         mainCategories,
