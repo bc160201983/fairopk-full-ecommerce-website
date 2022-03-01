@@ -8,7 +8,7 @@ const index = ({ data }) => {
 
   return (
     <>
-      <div className="bg-white sticky top-0">
+      <div className="bg-white sticky top-[64px] z-50">
         <CategoryNav categoriesData={data.allCatData} />
       </div>
       <div className="bg-[#F9F9F9] h-screen">

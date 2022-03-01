@@ -9,6 +9,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { AiOutlineRight } from "react-icons/ai";
 import Image from "next/image";
+import MobileCat from "./LeftSideBar/MobileCat/MobileCat";
 
 const ProductCategory = ({ data }) => {
   const router = useRouter();
@@ -23,6 +24,7 @@ const ProductCategory = ({ data }) => {
     setIsLoading(true);
     const res = await api.get("products", {
       category: id,
+      per_page: 20,
     });
     const data = await res.data;
     setIsLoading(false);
@@ -48,12 +50,12 @@ const ProductCategory = ({ data }) => {
   return (
     <div className="max-w-screen-xl mx-auto h-full pt-5 pb-5">
       <div className="content flex shadow-md h-full bg-white">
-        <div className="self-start basis-1/4 md:block hidden border sticky overflow-y-auto top-[64px] border-[#EEEEEE]">
+        <div className="self-start basis-1/4 lg:block hidden border sticky top-[120px] border-[#EEEEEE]">
           <LeftSideBar parent={data.parent} sub={data.sub} />
         </div>
 
-        <div className="right md:basis-3/4 w-full bg-white border-l-[1px] border-[#EEEEEE]">
-          <div className="right-header pl-6 border border-[#EEEEEE] w-full">
+        <div className="right lg:basis-3/4 w-full overflow-y-auto no-scrollbar">
+          <div className="right-header pl-3 border bg-white border-[#EEEEEE] w-full">
             <div className="pt-[15px] pb-[5px] text-[12px] font-thin text-[#666666]">
               <div className="whitespace-nowrap space-x-1 flex">
                 <div className="breadcrum flex justify-center items-center space-x-1">
@@ -93,19 +95,29 @@ const ProductCategory = ({ data }) => {
                 key="title"
               />
             </Head>
-            <div className="current-category font-[600] flex pt-[5px] pb-[15px]">
+            <div className="current-category font-[600] flex pt-[5px] pb-[15px] md:text-[16px] text-[13px]">
               {parentName || subName}
             </div>
-          </div>
-          {isLoading ? (
-            <div className="loading">
-              <Image src={Loader.src} width={100} height={100} alt="loading" />
+            <div className="mobile-cat-nav lg:hidden block">
+              <MobileCat parent={data.parent} sub={data.sub} />
             </div>
-          ) : (
-            products.map((p) => {
-              return <ProductList key={p.id} />;
-            })
-          )}
+          </div>
+          <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:bg-white bg-gray-200">
+            {isLoading ? (
+              <div className="loading">
+                <Image
+                  src={Loader.src}
+                  width={100}
+                  height={100}
+                  alt="loading"
+                />
+              </div>
+            ) : (
+              products.map((p) => {
+                return <ProductList key={p.id} {...p} />;
+              })
+            )}
+          </div>
         </div>
       </div>
     </div>

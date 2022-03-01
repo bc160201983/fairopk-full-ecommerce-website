@@ -59,7 +59,10 @@ body {
       animation-name: OverlyfadeIn;
       animation-duration: 0.5s;
     }
-
+    .sku {
+      margin: 10px 0px 30px 0px;
+      color: #999999;
+    }
     .overlay {
       position: fixed; /* Stay in place */
       z-index: 9999; /* Sit on top */
