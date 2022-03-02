@@ -69,7 +69,7 @@ const TopNav = () => {
                     width="70"
                     height="50"
                     className="object-contain"
-                    src="https://i0.wp.com/fairo.pk/wp-content/uploads/2019/02/fairo.pk_d00a_04a_1_300x224.png?fit=300%2C224&ssl=1"
+                    src="https://i0.wp.com/fairo.pk/wp-content/uploads/2019/09/cropped-Fairo-Logo.png?fit=512%2C512&ssl=1"
                     alt="logo"
                   />
                 </div>
