@@ -20,10 +20,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ![image](https://user-images.githubusercontent.com/41289168/158070130-b8359ad4-a45e-441e-97cc-d059d89df609.png)
 
 
-##Cart
+## Cart
 ![image](https://user-images.githubusercontent.com/41289168/158070144-7ee52000-f58f-4ff8-93e0-ea40d7384407.png)
 
-##Product Page
+## Product Page
 
 ![image](https://user-images.githubusercontent.com/41289168/158070162-479d6563-726e-4be1-b8f6-3d10ad3428c9.png)
 
