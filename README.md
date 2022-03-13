@@ -27,6 +27,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ![image](https://user-images.githubusercontent.com/41289168/158070162-479d6563-726e-4be1-b8f6-3d10ad3428c9.png)
 
-##Category Page with Product
+## Category Page with Product
 
 ![image](https://user-images.githubusercontent.com/41289168/158070175-12b3d11f-7e95-4d71-a8fd-59f97d091c6c.png)
