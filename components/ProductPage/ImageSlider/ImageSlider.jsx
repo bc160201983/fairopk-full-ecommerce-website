@@ -4,14 +4,14 @@ import Image from "next/image";
 import { default_image } from "../../Home/ProductList";
 import styled from "styled-components";
 const ImageSlider = ({ image }) => {
-  const [main, setMain] = useState(image[0].src);
+  const [main, setMain] = useState(image[0]?.src);
 
   return (
     <div>
       <Wrapper>
         <div className="sm:w-[346px] sm:h-[346px] h-[300px] w-[300px] flex justify-center items-center">
           <Image
-            src={main}
+            src={main === undefined ? default_image : main}
             width={242}
             height={285}
             alt="main"

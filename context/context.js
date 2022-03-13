@@ -1,31 +1,32 @@
 import React, { useState, useContext, useEffect } from "react";
+import Cookies from "js-cookie";
+
 import { api } from "../lib/woo";
 // make sure to use https
 
 const AppContext = React.createContext();
-// const getLocalStorage = () => {
-//   const ISSERVER = typeof window === "undefined";
-//   //if () let cart = localStorage.getItem("cart");
-//   if (!ISSERVER) {
-//     let cart = localStorage.getItem("cart");
-//     return (cart = JSON.parse(localStorage.getItem("cart")));
-//   } else {
-//     return [];
-//   }
-// };
-
+const getLocalStorage = () => {
+  let cart = Cookies.get("cart");
+  if (cart) {
+    return (cart = JSON.parse(Cookies.get("cart")));
+  } else {
+    return [];
+  }
+};
 const AppProvider = ({ children, pageProps }) => {
   const [NavMainCategories, setNavMainCategories] = useState([]);
   const [allCategories, setAllCategories] = useState([]);
   const [mainCategories, setMainCategories] = useState([]);
   const [catId, setCatId] = useState(null);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(getLocalStorage());
   const [inCart, setInCart] = useState(false);
   const [categories, setCategories] = useState([]);
   const [totalItemAmount, setTotalItemAmount] = useState(0);
   const [alert, setAlert] = useState({ show: false, msg: "" });
   const [total, setTotal] = useState({ amount: 0, total: 0 });
   const [cartVisible, setCartVisible] = useState(false);
+
+  console.log(getLocalStorage());
 
   const openCartModal = () => {
     setCartVisible(true);
@@ -107,7 +108,7 @@ const AppProvider = ({ children, pageProps }) => {
   };
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    Cookies.set("cart", JSON.stringify(cart));
     getTotal();
   }, [cart]);
   useEffect(() => {

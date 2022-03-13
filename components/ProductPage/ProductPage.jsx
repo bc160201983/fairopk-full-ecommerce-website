@@ -4,10 +4,20 @@ import ImageSlider from "./ImageSlider/ImageSlider";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import CartBtns from "../cart/CartBtns";
+import { useGlobalContext } from "../../context/context";
+import AddtoCartBtns from "../AddToCartBtn/AddtoCartBtns";
+import IncAndDec from "../Home/IncAndDec";
+import ProductAddBtn from "./Btn/ProductAddBtn";
+import ProductIncAndDec from "./Btn/ProductIncAndDec";
 const ProductPage = ({ product }) => {
+  const { cart, AddToCart, outOfStock } = useGlobalContext();
+
   const router = useRouter();
   const [productData, setProductData] = useState(product || []);
   const RelatedProduct = productData[0].related_ids;
+  const { id, name, price, image, stock_quantity, stock_status } =
+    productData[0];
 
   return (
     <div className="max-w-screen-xl pt- mx-auto border-b-[4px] border-gray-200">
@@ -27,9 +37,32 @@ const ProductPage = ({ product }) => {
               <div className="name pr-[2px] md:font-bold md:text-black text-[#666666] md:text-[16px] text-[14px]">
                 {productData[0].name}
               </div>
-              <div className="btn shadow-md cursor-pointer flex justify-center items-center text-[14px] text-[#0c831f] rounded w-[100px] h-7 border-[1px] border-[#CCCCCC]">
-                add
+
+              {/* add to cat btn */}
+              <div className="relative cursor-pointer w-[100px] h-7">
+                <ProductAddBtn
+                  id={id}
+                  name={name}
+                  price={price}
+                  image={image}
+                  stock_quantity={stock_quantity}
+                  stock_status={stock_status}
+                />
+
+                {cart?.map((cartItem) => {
+                  if (cartItem.id === id) {
+                    return (
+                      <ProductIncAndDec
+                        key={cartItem.id}
+                        {...cartItem}
+                        stock_quantity={stock_quantity}
+                      />
+                    );
+                  }
+                })}
               </div>
+
+              {/* add to cart btn end */}
             </div>
             <div className="unit mb-2 text-[14px] md:text-black text-[#666666]">
               Category :
